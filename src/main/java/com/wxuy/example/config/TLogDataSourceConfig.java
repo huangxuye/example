@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
+import org.mybatis.spring.boot.autoconfigure.SpringBootVFS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -31,6 +32,8 @@ public class TLogDataSourceConfig {
     public SqlSessionFactory tLogSqlSessionFactory(@Qualifier("TLogDataSource") DataSource datasource)
             throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+        //mybatis需要设置spring boot vsf
+        bean.setVfs(SpringBootVFS.class);
         bean.setDataSource(datasource);
         bean.setTypeAliasesPackage(env.getProperty("mybatis.type-aliases-package"));
         bean.setMapperLocations(

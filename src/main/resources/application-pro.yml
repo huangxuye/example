@@ -32,3 +32,14 @@ mybatis:
   type-aliases-package: com.wxuy.example.entity
 #  configuration:
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+users:
+  userlist:
+    - age: 11
+      user_name: 小王
+      description: A
+    - age: 13
+      user_name: 小张
+      description: C
+    - age: 14
+      user_name: 小李
+      description: B
