@@ -12,7 +12,7 @@
                 select * from ResourceB where id = #{id};
     </select>
 
-    <select id="findUser" parameterType="String" resultType="StraegyUser">
+    <select id="findUserC" parameterType="String" resultType="StraegyUser">
                 select * from ResourceC where id = #{id};
     </select>
 </mapper>
