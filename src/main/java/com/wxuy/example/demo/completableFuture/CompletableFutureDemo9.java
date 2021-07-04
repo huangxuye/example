@@ -54,7 +54,7 @@ public class CompletableFutureDemo9 {
 			//执行多线程处理 最多等待120s
 			allFutures.get(120, TimeUnit.SECONDS);
 		} catch (TimeoutException e) {
-			//throw new AiMaskException("fileProvenanceDealFutures处理超时异常");
+			//throw new Exception("fileProvenanceDealFutures处理超时异常");
 		}finally {
 			//关闭线程池
 			executor.shutdown();
